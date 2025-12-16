@@ -5,7 +5,8 @@ https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-blue.svg
 https://img.shields.io/badge/Python-3.6%252B-brightgreen.svg
 
 ✨ 包含的工具
-🖥️ 桌面自动化工具
+🖥️ 桌面自动化工具 
+
 ✅ 录制功能 - 精确捕捉鼠标移动、点击、滚动和键盘操作
 
 ✅ 回放功能 - 支持0.1x至10000x的速度调整和重复播放
@@ -14,7 +15,8 @@ https://img.shields.io/badge/Python-3.6%252B-brightgreen.svg
 
 ✅ 全局快捷键 - F9录制、F10播放、F12紧急停止
 
-🗺️ 栅格归一化工具
+🗺️ 栅格归一化工具 
+
 ✅ 批处理功能 - 批量处理栅格数据文件
 
 ✅ ArcGIS集成 - 作为Python工具箱(.pyt)集成到ArcGIS中
