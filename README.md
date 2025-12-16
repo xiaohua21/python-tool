@@ -5,6 +5,7 @@ https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-blue.svg
 https://img.shields.io/badge/Python-3.6%252B-brightgreen.svg
 
 ✨ 包含的工具
+
 🖥️ 桌面自动化工具 
 
 ✅ 录制功能 - 精确捕捉鼠标移动、点击、滚动和键盘操作
