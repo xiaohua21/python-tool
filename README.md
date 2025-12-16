@@ -1,176 +1,159 @@
-# 🖥️ 桌面自动化工具
+🛠️ Python工具箱
+一个功能强大的Python自动化工具集合，包含桌面自动化和栅格数据处理工具
 
-> 一款功能强大的桌面自动化工具，可以录制和回放鼠标、键盘操作
+https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-blue.svg
+https://img.shields.io/badge/Python-3.6%252B-brightgreen.svg
 
-[![License](https://img.shields.io/badge/许可证-MIT-blue.svg)](LICENSE)
-[![Python版本](https://img.shields.io/badge/Python-3.6%2B-brightgreen.svg)](https://www.python.org/downloads/)
+✨ 包含的工具
+🖥️ 桌面自动化工具
+✅ 录制功能 - 精确捕捉鼠标移动、点击、滚动和键盘操作
 
-## ✨ 主要功能
+✅ 回放功能 - 支持0.1x至10000x的速度调整和重复播放
 
-### 🎬 录制功能
-- ✅ **鼠标操作录制** - 精确捕捉鼠标移动、点击、滚动
-- ✅ **键盘操作录制** - 完整记录键盘按下和释放事件
-- ✅ **智能时间记录** - 自动记录事件间的时间间隔（每50ms记录一次）
-- ✅ **窗口感知** - 鼠标进入/离开窗口时自动暂停录制
+✅ 文件管理 - 保存和加载JSON格式的自动化脚本
 
-### 🎯 播放功能
-- ✅ **精确回放** - 完整复现所有录制的操作
-- ✅ **速度调整** - 支持 0.1x 至 10000x 的播放速度调整
-- ✅ **重复播放** - 可设置重复次数（1-99999次）
-- ✅ **暂停/继续** - 播放过程中随时暂停和继续
+✅ 全局快捷键 - F9录制、F10播放、F12紧急停止
 
-### 💾 文件管理
-- ✅ **保存事件** - 将录制的事件保存为 JSON 文件
-- ✅ **加载事件** - 加载之前保存的事件文件进行回放
-- ✅ **多文件支持** - 支持管理多个不同的自动化脚本
+🗺️ 栅格归一化工具
+✅ 批处理功能 - 批量处理栅格数据文件
 
-### 🚀 高级特性
-- ✅ **全局快捷键** - 无需激活窗口即可使用快捷键
-- ✅ **高速模式优化** - 高速播放时自动调整参数提高准确性
-- ✅ **详细日志** - 实时显示所有操作日志
-- ✅ **美观界面** - 基于 Tkinter 的现代化用户界面
-- ✅ **线程控制** - 使用多线程实现流畅的UI响应
+✅ ArcGIS集成 - 作为Python工具箱(.pyt)集成到ArcGIS中
 
-## ⌨️ 快捷键说明
+✅ 多种格式 - 支持常见的栅格数据格式
 
-| 快捷键 | 功能 | 说明 |
-|--------|------|------|
-| **F9** | 开始/停止录制 | 切换录制状态 |
-| **F10** | 开始/停止播放 | 切换播放状态 |
-| **F11** | 暂停/继续 | 在播放过程中暂停或继续 |
-| **F12** | 停止所有 | 停止所有正在进行的操作 |
-| **ESC** | 紧急停止 | 立即停止所有操作并显示提示 |
+✅ 可视化界面 - 在ArcGIS中提供友好的参数设置界面
 
-## 🛠️ 技术栈
+📋 系统要求
+Python 3.6 或更高版本
 
-- **GUI框架**: Tkinter（Python标准库）
-- **鼠标控制**: PyAutoGUI + pynput
-- **键盘监听**: keyboard + pynput
-- **数据序列化**: JSON
-- **并发处理**: threading
-- **系统交互**: os, time
+桌面自动化工具：Windows / macOS / Linux
 
-## 📋 系统要求
+栅格处理工具：ArcGIS Pro 或 ArcMap（必需）
 
-- Python 3.6 或更高版本
-- Windows / macOS / Linux
-- 管理员权限（某些操作可能需要）
+📦 快速安装
+bash
+# 克隆仓库
+git clone https://github.com/xiaohua21/python-tool.git
+cd python-tool
 
-## 📦 安装依赖
-
-```bash
-# 安装必要的依赖包
-pip install pyautogui keyboard mouse pynput
-
-# 或使用 requirements.txt
+# 安装桌面自动化工具依赖
+cd desktop-automation
 pip install -r requirements.txt
-```
 
-## 🚀 快速开始
-
-### 运行程序
-
-```bash
+# 或安装栅格处理工具依赖
+cd ../raster-normalization
+pip install -r requirements.txt
+🚀 快速开始
+桌面自动化工具
+bash
+cd desktop-automation
 python zidonghua.py
-```
+快捷键：
 
-### 基本使用流程
+F9：开始/停止录制
 
-1. **启动程序** - 运行 `python zidonghua.py`
-2. **按 F9 开始录制** - 程序开始记录你的鼠标和键盘操作
-3. **执行操作** - 进行你想自动化的操作序列
-4. **按 F9 停止录制** - 完成操作录制
-5. **点击保存** - 将录制的事件保存到 JSON 文件
-6. **按 F10 开始播放** - 程序将自动重复你的操作
+F10：开始/停止播放
 
-### 调整播放参数
+F12：紧急停止所有操作
 
-- **播放速度**: 使用滑块或预设按钮（1x, 10x, 100x, 1000x, 10000x）
-- **重复次数**: 在"重复次数"输入框中设置（1-99999）
+栅格归一化工具
+打开 ArcGIS Pro 或 ArcMap
 
-## 💡 使用案例
+在目录窗口中右键 → 添加工具箱
 
-### 📊 数据处理
-- 批量填充表单
-- 自动化数据输入
-- 重复操作自动执行
+选择 raster-normalization/RasterNormalization.pyt
 
-### 🎮 游戏和娱乐
-- 自动化游戏操作
-- 刷怪、采集等重复任务
-- 演示和录屏
+双击工具图标开始使用
 
-### 🔧 办公自动化
-- 重复的系统操作
-- 批量文件处理
-- 日常工作流自动化
+📂 项目结构
+text
+python-tool/
+├── desktop-automation/          # 🖥️ 桌面自动化工具
+│   ├── zidonghua.py            # 主程序文件
+│   ├── README.md               # 详细使用说明
+│   └── requirements.txt        # Python依赖包
+├── raster-normalization/       # 🗺️ 栅格处理工具
+│   ├── RasterNormalization.pyt # ArcGIS工具箱
+│   ├── README.md               # ArcGIS使用说明
+│   └── requirements.txt        # 数据处理依赖包
+├── README.md                   # 📋 本项目总说明
+└── LICENSE                     # ⚖️ MIT许可证
+💡 使用场景
+桌面自动化工具应用
+办公自动化：批量处理文档、表格填充
 
-## 📂 项目结构
+软件测试：自动化UI测试脚本
 
-```
-python-zc/
-├── zidonghua.py       # 主程序文件
-├── README.md          # 项目说明文档
-├── requirements.txt   # 依赖包列表
-└── events/           # 保存的事件文件目录
-    └── *.json        # JSON格式的事件文件
-```
+游戏辅助：重复任务自动化执行
 
-## ⚠️ 注意事项
+数据录入：自动填写表单和系统
 
-1. **安全性**: 使用 PyAutoGUI 的安全机制，移动鼠标到屏幕角落可紧急停止
-2. **权限**: 某些系统可能需要管理员权限才能监听全局快捷键
-3. **性能**: 建议在重复次数过多时使用较高的播放速度
-4. **测试**: 新建自动化脚本时先用低速度(1x)测试，确认无误后再提速
+栅格处理工具应用
+遥感分析：卫星影像数据处理
 
-## 🔍 日志和调试
+地理研究：DEM、土地利用数据分析
 
-程序窗口中的日志面板会显示：
-- 录制/播放的开始和停止
-- 事件数量
-- 操作速度
-- 错误信息和异常
+环境监测：气象、水文数据归一化
 
-## 🎓 常见问题
+城市规划：空间数据批量处理
 
-**Q: 为什么某些快捷键不起作用?**
-A: 确保程序以管理员身份运行，某些系统可能需要特殊的权限配置。
+⚠️ 注意事项
+桌面自动化工具
+权限要求：某些系统需要管理员权限才能使用全局快捷键
 
-**Q: 播放速度太快会出错怎么办?**
-A: 降低播放速度或检查系统性能。高速模式下已进行了优化，但极限情况下可能需要调整。
+安全机制：移动鼠标到屏幕四角可紧急停止操作
 
-**Q: 如何加载之前保存的脚本?**
-A: 点击"加载"按钮，选择之前保存的 JSON 文件即可。
+性能建议：高重复次数建议使用较快的播放速度
 
-## 🤝 贡献
+栅格处理工具
+软件要求：必须安装ArcGIS Pro或ArcMap
 
-欢迎提交 Issue 和 Pull Request！如果你有改进建议，请：
+数据兼容：确保输入数据格式与工具兼容
 
-1. Fork 本仓库
-2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启一个 Pull Request
+处理时间：大文件处理可能需要较长时间
 
-## 📄 许可证
+🎓 常见问题
+Q: 桌面工具的快捷键不起作用怎么办？
+A: 尝试以管理员身份运行程序，或检查是否有其他程序占用了相同快捷键。
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+Q: 栅格工具在ArcGIS中不显示怎么办？
+A: 检查ArcGIS版本是否兼容，确保.pyt文件没有损坏。
 
-## 👨‍💻 作者
+Q: 如何同时使用两个工具？
+A: 两个工具相互独立，可以分别安装在各自的Python环境中。
 
-- **xiaohua21** - 初始开发和维护
+Q: 可以在没有ArcGIS的电脑上使用栅格工具吗？
+A: 不可以，栅格处理工具依赖ArcGIS的运行环境。
 
-## 🙏 致谢
+🤝 贡献指南
+欢迎为Python工具箱贡献力量！
 
-- 感谢所有贡献者和用户的支持
-- 借鉴了 Python 社区的最佳实践
+Fork 本仓库
 
-## 📞 反馈和支持
+创建特性分支 (git checkout -b feature/新功能)
 
-如有任何问题或建议，欢迎：
-- 在 GitHub 上提交 [Issue](https://github.com/xiaohua21/python-zc/issues)
-- 查看项目文档和示例代码
+提交更改 (git commit -m '添加新功能')
 
----
+推送分支 (git push origin feature/新功能)
 
-**用 ❤️ 开发 | Made with ❤️ by xiaohua21**
+创建Pull Request
+
+📄 许可证
+本项目采用 MIT 许可证 - 详见 LICENSE 文件。
+
+👨‍💻 作者
+xiaohua21 - 项目创建者和维护者
+
+🙏 致谢
+感谢所有用户和贡献者的支持
+
+借鉴了Python和GIS社区的最佳实践
+
+📞 反馈和支持
+如有任何问题或建议，请：
+
+在GitHub上提交 Issue
+
+查看各工具目录中的详细文档
+
+用 ❤️ 开发 | Made with ❤️ by xiaohua21
